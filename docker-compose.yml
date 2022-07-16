@@ -9,3 +9,5 @@ services:
       - ./:/app:cached
     ports:
       - "3000:3000"
+    environment:
+      WEATHER_API_KEY: "fake_key"

@@ -1,4 +1,4 @@
-# typed: strict
+# typed: true
 module Types
   class QueryType < Types::BaseObject
     extend T::Sig
@@ -11,10 +11,10 @@ module Types
     # They will be entry points for queries on your schema.
 
     field :location_weather, WeatherType, null: false,
-      description: "Weather for a specific location" do
+      description: "Weather for a specific location" do |f|
       
-      argument :latitude, Float, required: true, description: "Latitude"
-      argument :longitude, Float, required: true, description: "Longitude"
+      f.argument :latitude, Float, required: true, description: "Latitude"
+      f.argument :longitude, Float, required: true, description: "Longitude"
     end
 
     sig { params(latitude: Float, longitude: Float).returns(LocationWeather) }

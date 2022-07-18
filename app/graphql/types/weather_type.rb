@@ -3,7 +3,11 @@
 
 module Types
   class WeatherType < Types::BaseObject
-    field :outsite_condition, String
-    field :subjective_temperature, String
+    field :temperature, Float, null: false, description: "Temperature"
+    field :outsite_condition, String, null: false, description: "Outsite condition"
+    field :subjective_temperature, String, null: false, description: "Subjective temperature"
+    field :feels_like, Float, null: false, description: "Feels like"
+    field :weather_type, String, null: false, description: "Primary Weather Condition"
+    field :weather_description, String, null: false, description: "Primary Weather Condition Description"
   end
 end

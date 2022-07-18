@@ -6,14 +6,18 @@ class LocationWeather < T::Struct
   const :latitude, Float
   const :longitude, Float
   const :temperature, Float
-
-  sig { returns(String) }
-  def outsite_condition
-    "clear"
-  end
+  const :feels_like, Float
+  const :weather_type, String
+  const :weather_description, String
 
   sig { returns(String) }
   def subjective_temperature
-    "hot"
+    if feels_like < 50
+      "Cold"
+    elsif feels_like >= 60 && feels_like < 75
+      "Moderate"
+    else
+      "Hot"
+    end
   end
 end

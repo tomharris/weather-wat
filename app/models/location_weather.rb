@@ -14,11 +14,11 @@ class LocationWeather < T::Struct
   sig { returns(String) }
   def subjective_temperature
     if feels_like < 50
-      "Cold"
+      "COLD"
     elsif feels_like >= 60 && feels_like < 75
-      "Moderate"
+      "MODERATE"
     else
-      "Hot"
+      "HOT"
     end
   end
 

@@ -9,5 +9,7 @@ module Types
     field :feels_like, Float, null: false, description: "Feels like"
     field :weather_type, String, null: false, description: "Primary Weather Condition"
     field :weather_description, String, null: false, description: "Primary Weather Condition Description"
+
+    field :alerts, [Types::WeatherAlertType], null: false, description: "Active Alerts (if any)"
   end
 end
